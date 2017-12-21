@@ -1,26 +1,13 @@
 #!/usr/bin/python
 # -*- coding: utf-8
+#
+# Auslesen der Wetterdaten von Node-MCU
  
 import urllib2
 response = urllib2.urlopen('http://192.168.2.50')
 raw = response.read()
  
-#Python3
-#import urllib.request
-#with urllib.request.urlopen('http://192.168.2.50') as response:
-#   raw = response.read()
- 
-#import wget
-#url = '192.168.2.50' 
-#wget.download(url, '/home/pi/tmp/weather.html') 
- 
-# Datei öffnen und in rawtext ablegen
-#datei="/home/pi/tmp/weather.html"
-#in_file = open(datei,"r")
-#raw_text = in_file.read()
-#in_file.close()
- 
-# Wörter trennen
+# Woerter trennen
 split_text = raw.split(" ")
  
 # Zeichenketten suchen und Werte ermitteln
