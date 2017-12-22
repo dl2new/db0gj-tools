@@ -1,7 +1,5 @@
 # db0gj-tools
-Repeater DB0GJ Tools
-
-Sammlung verschiedener Tools
+Repeater DB0GJ Tools - Sammlung verschiedener Tools
 
 Geplant:
 - Anbindung Standort DB0GJ via Hamnet
