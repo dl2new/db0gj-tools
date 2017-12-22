@@ -2,6 +2,8 @@
 # -*- coding: utf-8
 #
 # Auslesen der Wetterdaten von Node-MCU
+# Weiterverarbeitung dann durch Direwolf-APRS
+# Test/Beispiel für DB0GJ-Telemetrie
 # DL2NEW 22.12.2017
  
 import urllib2
