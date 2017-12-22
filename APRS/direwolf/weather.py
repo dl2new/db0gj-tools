@@ -2,6 +2,7 @@
 # -*- coding: utf-8
 #
 # Auslesen der Wetterdaten von Node-MCU
+# DL2NEW 22.12.2017
  
 import urllib2
 response = urllib2.urlopen('http://192.168.2.50')
