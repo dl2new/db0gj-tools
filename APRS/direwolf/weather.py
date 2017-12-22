@@ -14,13 +14,14 @@ raw = response.read()
 split_text = raw.split(" ")
  
 # Zeichenketten suchen und Werte ermitteln
+# Temp in C, Druck in hpa, Feuchte in %
 for i in range(1, 100):
    if split_text[i] == "<p>Temperature:":
-      temp = split_text[i+1]
+      temp = int(split_text[i+1])
    if split_text[i] == "<p>Pressure:":
-      druck = split_text[i+1]
+      druck = int(split_text[i+1]) / 100
    if split_text[i] == "<p>Humidity:":
-      feuchte = split_text[i+1]
+      feuchte = int(split_text[i+1])
       break
  
 # Ausgabe
