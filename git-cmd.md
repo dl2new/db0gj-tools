@@ -1,6 +1,6 @@
 ## Github Kommandos ##
 - git clone https://...
-- git checkout -b "xhanges ..."
+- git checkout -b "changes ..."
 - git checkout master
 - git branch
 
