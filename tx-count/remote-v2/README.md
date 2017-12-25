@@ -9,6 +9,7 @@ crontab -e
 ftpupload.sh
 ```
 #!/bin/bash
+HOST='xxx'
 USER='xxx"
 PASSWD='xxx'
 cd /home/pi/db0gj
