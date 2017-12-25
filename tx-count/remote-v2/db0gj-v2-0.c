@@ -1,5 +1,7 @@
 /* DB0GJ Aktivitaetszaehler */
 /* Neue Version direkt am Relais */
+/* Signalerfassung, Log in Datei schreiben, Zaehler in Datei sichern */
+/* Programmstart mit -i: Zaehler werden auf Null gesetzt */
 /* Compilieren: gcc -Wall -o db0gj-vx db0gj-vx.c -l bcm2835 */
 /* V2.0 23.12.2017 DL2NEW
 
@@ -19,23 +21,29 @@
 
 #define CNT "/home/pi/db0gj/db0gj.cnt"
 #define LOG "/home/pi/db0gj/db0gj-log.txt"
-#define CROSS "/home/pi/db0gj/db0gj-cross.html"
-#define INDEX "/home/pi/db0gj/index.html"
 
 #define DEBUG
 
 int main(int argc, char **argv)
 {
+	/* val = Rueckgabewert GPIO, blink = LED blinken */ 
 	uint8_t val, blink;
-	uint16_t cnt, z1, z2, z3, total_qso, max_qso;
+
+	/* cnt = Sekunden Relais offen bei einem Durchgang */
+	/* z1 = Anzahl Stoerungen */
+	/* z2 = Anzahl Oeffnungen ohne QSO */
+	/* z3 = Anzahl Oeffnungen mit QSO */
+	/* max_qso = laengstes Einzel-QSO in Sekunden */
+	uint16_t cnt, z1, z2, z3, max_qso;
+
+	/* total_qso = Gesamtsekunden Relais offen */
+	uint32_t total_qso;
+
 	char timebuf[30];
-	char timebuf2[30];
 	char* timetmp;
 	char* p;
 	FILE *fp1;
-	FILE *fp2;
 	time_t now, starttime;
-	int zeichen, crosscnt;
 	
 	/* Init GPIO */
 	if (!bcm2835_init()) return 1;
@@ -275,51 +283,6 @@ int main(int argc, char **argv)
 				#endif
 			}
 			
-			/* Aktuelle html-Datei erzeugen */
-			#ifdef DEBUG
-			printf("Schreibe index.html\n");
-			#endif
-			fp1 = fopen(CROSS, "r");
-			fp2 = fopen(INDEX, "w");
-			if(fp1 == NULL || fp2 == NULL)
-			{
-				printf("Fehler bei fopen CROSS-INDEX");
-				exit(0);
-			}
-			
-			crosscnt = 0;
-			
-			/* Start: \n am Ende der Zeit entfernen */
-			timetmp = ctime(&starttime);
-			strcpy(timebuf2, timetmp);
-			p = strchr(timebuf2, '\n');
-			if(p)
-			{
-				*p = '\0';
-			}
-			/* End: \n am Ende der Zeit entfernen */
-
-			while((zeichen=getc(fp1)) != EOF)
-			{
-				if(zeichen=='+')
-				{
-					crosscnt += 1;
-					
-					if(crosscnt==1) fprintf(fp2, "%hu", z2);
-					if(crosscnt==2) fprintf(fp2, "%hu", z3);
-					if(crosscnt==3) fprintf(fp2, "%hu", total_qso);
-					if(crosscnt==4) fprintf(fp2, "%hu", max_qso);
-					if(crosscnt==5) fprintf(fp2, "%s", timebuf2);
-					if(crosscnt==6) fprintf(fp2, "%s", timebuf);
-				}
-				else
-					putc(zeichen, fp2);
-			}
-			
-			fclose(fp1);
-			fclose(fp2);
-			/* END Aktuelle html-Datei erzeugen */
-
 		}
 		else
 		{
