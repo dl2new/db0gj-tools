@@ -15,7 +15,8 @@
 #include <time.h>
 #include <bcm2835.h>
 
-/* Pin11=Gpio17  Pin22=Gpio25 */
+/* Fotodiode: Pin11=Gpio17 und Pin1=3,3V */
+/* LED:       Pin22=Gpio25 und Pin6=GND  */
 #define TAST RPI_GPIO_P1_11
 #define LED RPI_GPIO_P1_22
 
