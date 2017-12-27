@@ -13,3 +13,4 @@ Hochladen/aktualisieren:
 Weiteres:
 - git remote add upstream https://master...
 - git fetch upstream
+- git rebase (bei: fatal: Verweigere den Merge von nicht zusammenhängenden Historien.)
