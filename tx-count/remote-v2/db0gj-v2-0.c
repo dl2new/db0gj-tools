@@ -3,7 +3,7 @@
 /* Signalerfassung, Log in Datei schreiben, Zaehler in Datei sichern */
 /* Programmstart mit -i: Zaehler werden auf Null gesetzt */
 /* Compilieren: gcc -Wall -o db0gj-vx db0gj-vx.c -l bcm2835 */
-/* V2.0 23.12.2017 DL2NEW
+/* V2.0 27.12.2017 DL2NEW */
 
 #include <sys/stat.h>
 #include <sys/types.h>
@@ -28,17 +28,17 @@
 int main(int argc, char **argv)
 {
 	/* val = Rueckgabewert GPIO, blink = LED blinken */ 
-	uint8_t val, blink;
+	unsigned short val, blink;
 
 	/* cnt = Sekunden Relais offen bei einem Durchgang */
 	/* z1 = Anzahl Stoerungen */
 	/* z2 = Anzahl Oeffnungen ohne QSO */
 	/* z3 = Anzahl Oeffnungen mit QSO */
 	/* max_qso = laengstes Einzel-QSO in Sekunden */
-	uint16_t cnt, z1, z2, z3, max_qso;
+	unsigned int cnt, z1, z2, z3, max_qso;
 
 	/* total_qso = Gesamtsekunden Relais offen */
-	uint32_t total_qso;
+	unsigned long total_qso;
 
 	char timebuf[30];
 	char* timetmp;
@@ -66,10 +66,10 @@ int main(int argc, char **argv)
 			{
 				now = time(0);
 			
-				fprintf(fp1, "%ld\n%hu\n%hu\n%hu\n%hu\n%hu\n", now,0,0,0,0,0);
+				fprintf(fp1, "%ld\n%u\n%u\n%u\n%u\n%u\n", now,0,0,0,0,0);
 				fclose(fp1);
 				#ifdef DEBUG
-				printf("Init CNT:\n%ld\n%hu\n%hu\n%hu\n%hu\n%hu\n", now,0,0,0,0,0);
+				printf("Init CNT:\n%ld\n%u\n%u\n%u\n%u\n%u\n", now,0,0,0,0,0);
 				#endif
 			}
 		
@@ -110,10 +110,10 @@ int main(int argc, char **argv)
 	}
 	else
 	{
-		fscanf(fp1, "%ld\n%hu\n%hu\n%hu\n%hu\n%hu\n", &starttime, &z1, &z2, &z3, &total_qso, &max_qso);
+		fscanf(fp1, "%ld\n%u\n%u\n%u\n%lu\n%u\n", &starttime, &z1, &z2, &z3, &total_qso, &max_qso);
 		fclose(fp1);
 		#ifdef DEBUG
-		printf("Eingelesene Werte: %ld %hu %hu %hu %hu %hu\n", starttime, z1, z2, z3, total_qso, max_qso);
+		printf("Eingelesene Werte: %ld %u %u %u %lu %u\n", starttime, z1, z2, z3, total_qso, max_qso);
 		printf("Starttime %s\n", ctime(&starttime));
 		#endif
 	}
@@ -222,10 +222,10 @@ int main(int argc, char **argv)
 						}
 						/* End: \n am Ende der Zeit entfernen */
 		
-						fprintf(fp1, "%s Relais geoeffnet ohne QSO: %hu %hu %hu %hu %hu \n", timebuf, z1,z2,z3,total_qso,max_qso);
+						fprintf(fp1, "%s Relais geoeffnet ohne QSO: %u %u %u %lu %u \n", timebuf, z1,z2,z3,total_qso,max_qso);
 						fclose(fp1);
 						#ifdef DEBUG
-						printf("%s Relais geoeffnet ohne QSO: %hu %hu %hu %hu %hu \n", timebuf, z1,z2,z3,total_qso,max_qso);
+						printf("%s Relais geoeffnet ohne QSO: %u %u %u %lu %u \n", timebuf, z1,z2,z3,total_qso,max_qso);
 						#endif
 					}
 					
@@ -258,10 +258,10 @@ int main(int argc, char **argv)
 						}
 						/* End: \n am Ende der Zeit entfernen */
 		
-						fprintf(fp1, "%s Relais geoeffnet mit QSO: %hu %hu %hu %hu %hu \n", timebuf, z1,z2,z3,total_qso,max_qso);
+						fprintf(fp1, "%s Relais geoeffnet mit QSO: %u %u %u %lu %u \n", timebuf, z1,z2,z3,total_qso,max_qso);
 						fclose(fp1);
 						#ifdef DEBUG
-						printf("%s Relais geoeffnet mit QSO: %hu %hu %hu %hu %hu \n", timebuf, z1,z2,z3,total_qso,max_qso);
+						printf("%s Relais geoeffnet mit QSO: %u %u %u %lu %u \n", timebuf, z1,z2,z3,total_qso,max_qso);
 						#endif
 					}
 					
@@ -277,10 +277,10 @@ int main(int argc, char **argv)
 			}
 			else
 			{
-				fprintf(fp1, "%ld\n%hu\n%hu\n%hu\n%hu\n%hu\n", starttime,z1,z2,z3,total_qso,max_qso);
+				fprintf(fp1, "%ld\n%u\n%u\n%u\n%lu\n%u\n", starttime,z1,z2,z3,total_qso,max_qso);
 				fclose(fp1);
 				#ifdef DEBUG
-				printf("%ld %hu %hu %hu %hu %hu\n", starttime,z1,z2,z3,total_qso,max_qso);
+				printf("%ld %u %u %u %lu %u\n", starttime,z1,z2,z3,total_qso,max_qso);
 				#endif
 			}
 			
