@@ -29,6 +29,6 @@ Raspberry Pins
 Leiste oben
 2 4 6 8 10 12 14 16 18 20 22
 1 3 5 7 9  11 13 15 17 19 21
-LED:  Pin6=GND  Pin22=GPIO25
+LED:  Pin6=GND  Pin22=GPIO25, Vorwiderstand 330Ohm
 Foto: Pin1=3,3V Pin11=GPIO17
 ```
