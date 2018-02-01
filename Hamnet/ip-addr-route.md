@@ -18,7 +18,7 @@ static domain_name_servers=192.168.200.1
 noipv6 
 
 ---
-WLAN config unter:
+WLAN config unter (chmod 600):
 /etc/wpa_supplicant/wpa_supplicant.conf
 
 ```
