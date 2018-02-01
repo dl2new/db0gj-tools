@@ -17,6 +17,10 @@ static routers=192.168.200.1
 static domain_name_servers=192.168.200.1
 noipv6 
 
+---
+WLAN config unter:
+/etc/wpa_supplicant/wpa_supplicant.conf
+
 ```
 
 
