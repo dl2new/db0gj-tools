@@ -14,7 +14,7 @@ sudo nano /etc/network/if-pre-up.d/iptables
 ```
 ### Test/Show ###
 Für Fehlersuche alle Regeln bis zum nächsten Neustart disablen: sudo iptables -F
-Anzeige aktive Table: sudo iptables -L
+Anzeige aktive Table: sudo iptables -L -v
 Log controllieren: tailf /var/log/kern.log
 
 ### Beispiel ###
