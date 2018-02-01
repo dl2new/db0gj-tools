@@ -66,6 +66,7 @@ Log controllieren: tailf /var/log/kern.log
 #
 -A FORWARD -i wlan0 -o eth0 -p tcp -j ACCEPT
 -A FORWARD -i eth0 -o wlan0 -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
+-A FORWARD -p icmp -j ACCEPT
 #
 # Rest drop
 #
