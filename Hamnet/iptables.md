@@ -4,6 +4,8 @@
 ```
 sudo sh -c "iptables-save > /etc/network/iptables"
 sudo touch /etc/network/if-pre-up.d/iptables
+     #!/bin/sh
+     /sbin/iptables-restore /etc/network/iptables
 sudo chmod +x /etc/network/if-pre-up.d/iptables
 ```
 
