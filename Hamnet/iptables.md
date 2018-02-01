@@ -13,8 +13,8 @@ sudo nano /etc/network/if-pre-up.d/iptables
 /sbin/iptables-restore /etc/network/iptables
 ```
 ### Test/Show ###
-Für Fehlersuche alle Regeln bis zum nächsten Neustart disablen: sudo iptables –flush
-
+Für Fehlersuche alle Regeln bis zum nächsten Neustart disablen: sudo iptables -F
+Anzeige aktive Table: sudo iptables -L
 Log controllieren: tailf /var/log/kern.log
 
 ### Beispiel ###
