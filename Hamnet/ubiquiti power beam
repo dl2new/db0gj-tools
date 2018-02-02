@@ -1,6 +1,6 @@
 ## Ubiquiti PowerBeam ##
 
-Kommandos CLI
+###Kommandos CLI
 ```
 command: iwconfig ath0
 summary: shows most info about the wireless interface (ath0)
