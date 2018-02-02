@@ -1,25 +1,18 @@
 ## Ubiquiti PowerBeam ##
 
-Kommandos
+Kommandos CLI
 ```
-iwconfig ath0
-more info:
-ESSID
-Mode
-Frequency
-MAC Address
-Data Rate (Bit Rate)
-TX Power*
-RTS (Does not apply in Airmax mode)
-Encryption key in hex
-Link Quality
-Signal Level
-Noise Floor
-Errors
-etc.
-
+command: iwconfig ath0
+summary: shows most info about the wireless interface (ath0)
 examples:
 iwconfig ath0 txpower 8
 iwconfig ath0 essid any
 iwconfig ath0 freq 5.820
+
+command: wstalist
+summary: shows all connected stations and their info
+
+command: less /tmp/system.cfg
+command: mca-status | grep signal
+command: ubntbox
 ```
