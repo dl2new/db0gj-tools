@@ -1,0 +1,25 @@
+## Ubiquiti PowerBeam ##
+
+Kommandos
+```
+iwconfig ath0
+more info:
+ESSID
+Mode
+Frequency
+MAC Address
+Data Rate (Bit Rate)
+TX Power*
+RTS (Does not apply in Airmax mode)
+Encryption key in hex
+Link Quality
+Signal Level
+Noise Floor
+Errors
+etc.
+
+examples:
+iwconfig ath0 txpower 8
+iwconfig ath0 essid any
+iwconfig ath0 freq 5.820
+```
