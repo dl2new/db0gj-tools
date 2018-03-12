@@ -20,6 +20,12 @@ noipv6
 ---
 WLAN config unter (chmod 600):
 /etc/wpa_supplicant/wpa_supplicant.conf
+Beispiel:
+network={
+       ssid="wlan-bezeichnung"
+       psk="passwort"
+       key_mgmt=WPA-PSK
+}
 
 ```
 
