@@ -16,3 +16,8 @@ command: less /tmp/system.cfg
 command: mca-status | grep signal
 command: ubntbox
 ```
+
+### Kommandos CLI ###
+```
+LED1/2/3/4  -94/-80/-73/-65
+```
