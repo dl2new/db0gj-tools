@@ -7,6 +7,7 @@
 # Basis: Philipp DL7FL mit unterstuezung von DH3RW (RWTH-AFU)
 #
 # Modification: DL2NEW - Sven - 08.04.2020
+# Sendet DAP-Msg an ein Rufzeichen. Msg enthaelt die ausgelesene CPU-Temperatur.
 #
 
 import os, sys
