@@ -2,7 +2,7 @@
 
 ### Autostart iptables ###
 ```
-!/usr/bin/python
+#!/usr/bin/python
 # -*- coding: latin-1 -*-
 #
 # Basis: Philipp DL7FL mit unterstuezung von DH3RW (RWTH-AFU)
