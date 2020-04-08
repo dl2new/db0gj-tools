@@ -2,7 +2,7 @@
 
 ### Python code ###
 ```
-!/usr/bin/env python
+#!/usr/bin/env python
 #
 # Raspi Temberatur und Zeit auslesen und in index.html Platzhalter ersetzen
 # DL2NEW - Sven, 08.04.2020
