@@ -1,6 +1,6 @@
 ## DAPNET Message senden ##
 
-### Autostart iptables ###
+### Python code ###
 ```
 #!/usr/bin/python
 # -*- coding: latin-1 -*-
