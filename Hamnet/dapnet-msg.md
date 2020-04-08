@@ -2,8 +2,7 @@
 
 ### Python code ###
 ```
-#!/usr/bin/python
-# -*- coding: latin-1 -*-
+#!/usr/bin/env python
 #
 # Basis: Philipp DL7FL mit unterstuezung von DH3RW (RWTH-AFU)
 #
