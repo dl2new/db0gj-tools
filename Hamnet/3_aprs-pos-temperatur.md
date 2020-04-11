@@ -1,3 +1,7 @@
+## APRS Position senden inkl. Raspi Temperatur ##
+
+### Python code ###
+```
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #
@@ -19,8 +23,8 @@ VERSION = "PyAPRS DL2NEW v1.0"
 CALL= "call"
 PASSWORD = "passcode"
 #serverHost = 'rotate.aprs2.net'
-serverHost = 'aprs.oe2xzr.ampr.org' # IP=44.143.40.90
-serverPort = 14580
+iGateHost = 'aprs.oe2xzr.ampr.org' # IP=44.143.40.90
+iGatePort = 14580
 address = CALL + '>APZ091:'
 
 #
@@ -41,14 +45,16 @@ comment = comment1 + tempclean2
 # Senden
 #
 my_sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-my_sock.connect((serverHost, serverPort))
+my_sock.connect((iGateHost, iGatePort))
 my_sock.send('user ' + CALL + ' pass ' + PASSWORD + ' vers ' + VERSION + 'filter p/LU/LW\n')
 data = my_sock.recv(4096)
 if data.startswith("#"):
-    print("Succesfully login to " +serverHost)
+    print("Succesfully login to " +iGateHost)
 my_sock.send(address + comment + '\n')
 print "\033[1;36m"+address+comment+"\033[1;m"
 print("\033[1;32mpacket sent: " + time.ctime()+"\033[1;m" )
 time.sleep(2) # 2 sec. delay
 my_sock.shutdown(0)
 my_sock.close()
+### Python code ###
+```
