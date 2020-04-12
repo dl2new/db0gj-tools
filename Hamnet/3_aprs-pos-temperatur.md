@@ -22,8 +22,8 @@ import subprocess
 # Definitionen
 #
 VERSION = "PyAPRS DL2NEW v1.1"
-CALL= "DL2NEW-2"
-PASSWORD = "16567"
+CALL= "call"
+PASSWORD = "passcode"
 #iGateHost = 'rotate.aprs2.net'
 iGateHost = 'aprs.oe2xzr.ampr.org' # IP=44.143.40.90
 iGatePort = 14580
