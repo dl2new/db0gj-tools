@@ -1,7 +1,3 @@
-## APRS Position senden inkl. Raspi Temperatur ##
-
-### Python code ###
-```
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # 
@@ -115,4 +111,3 @@ aprsSend(reportObj1)
 aprsSend(reportTele1)
 aprsSend(reportObj2)
 aprsSend(reportObj3)
-```
