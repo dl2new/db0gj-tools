@@ -1,7 +1,3 @@
-## Raspi Webseite dynamisch mit Temperatur ##
-
-### Python code ###
-```
 #!/usr/bin/env python
 #
 # Raspi Temberatur und Zeit auslesen und in index.html Platzhalter ersetzen
@@ -50,4 +46,3 @@ for line in file:
     sys.stdout.write(line)
 
 file.close()
-```
