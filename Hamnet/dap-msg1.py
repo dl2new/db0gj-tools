@@ -1,7 +1,3 @@
-## DAPNET Message senden ##
-
-### Python code ###
-```
 #!/usr/bin/env python
 #
 # Basis: Philipp DL7FL mit unterstuezung von DH3RW (RWTH-AFU)
@@ -53,4 +49,3 @@ def send(text, callsign, login, passwd, url, txgroup): # mit json modul machen
 ### Senden ###
 #
 send(text, callsign, login, passwd, url, txgroup)
-```
