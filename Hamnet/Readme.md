@@ -8,5 +8,8 @@
 - DAPNET Message senden inkl. Raspi-Temperatur
 
 ### db0gj-web-transfer.py
+- Webseite von Hamnet lesen und im Internet speichern
+
+### cc
 - Platzhalter in Web-Seite ersetzen und Seite speichern
 - für DB0GH Web-Server dynamischer Inhalt (Raspi Temp)
