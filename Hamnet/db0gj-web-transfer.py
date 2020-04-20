@@ -1,6 +1,3 @@
-## Copy DB0GJ Page and transfer to Internet ##
-### Python code ###
-```
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #
@@ -51,4 +48,3 @@ ftps.storbinary("STOR test.html", myfile, blocksize=8192)
 
 ftps.close()
 myfile.close()
-```
