@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #
-# Webseite durchsuchen und abspeichern
-# 09.04.2020 DL2NEW Sven
+# Webseite von Hamnet lesen und im Internet speichern
+# 20.04.2020 DL2NEW Sven
 #
 
 import re
@@ -10,7 +10,7 @@ from urllib import request # Ubuntu
 # import urllib # Raspi
 from ftplib import FTP_TLS
 
-htmlfile = "/home/sven/python/test.html"
+htmlfile = "/tmp/db0gj-cpy.html"
 url = "http://44.225.178.194"
 ftpurl = "dl2new.darc.de"
 ftpuser = "ftpuser"
