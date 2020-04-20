@@ -10,6 +10,6 @@
 ### db0gj-web-transfer.py
 - Webseite von Hamnet lesen und im Internet speichern
 
-### cc
+### index-temperatur.py
 - Platzhalter in Web-Seite ersetzen und Seite speichern
 - für DB0GH Web-Server dynamischer Inhalt (Raspi Temp)
